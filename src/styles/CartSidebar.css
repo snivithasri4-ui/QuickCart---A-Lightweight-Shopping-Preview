@@ -1,0 +1,57 @@
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px; /* hidden initially */
+  width: 350px;
+  height: 100%;
+  background: white;
+  color: black;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  padding: 20px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* when open */
+.cart-sidebar.open {
+  right: 0;
+}
+
+/* close button */
+.cart-close {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* cart item */
+.cart-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.cart-item h4 {
+  margin: 0;
+}
+
+.cart-item p {
+  margin: 5px 0;
+}
+
+/* buttons */
+.cart-item button {
+  margin: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+/* total */
+.cart-total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
