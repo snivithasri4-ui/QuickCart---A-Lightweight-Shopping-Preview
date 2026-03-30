@@ -2,15 +2,11 @@ import products from "../data/products";
 import ProductCard from "./ProductCard";
 import "../styles/ProductList.css";
 
-function ProductList({ onAddToCart }) {
+function ProductList() {
   return (
     <div className="grid">
-      {products.map(product => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          onAddToCart={onAddToCart}
-        />
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

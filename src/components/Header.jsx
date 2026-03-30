@@ -1,12 +1,6 @@
-function Header({ count, onCartClick }) {
-  return (
-    <header style={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
-      <h1>🛒 QuickCart</h1>
-      <button onClick={onCartClick}>
-        Cart ({count})
-      </button>
-    </header>
-  );
+import "../styles/Header.css";
+function Header() {
+  return <h1>🛒 QuickCart</h1>;
 }
 
 export default Header;
