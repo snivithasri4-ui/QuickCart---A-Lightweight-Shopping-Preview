@@ -7,6 +7,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Add to cart
   const addToCart = (product) => {
     const existing = cart.find(item => item.id === product.id);
 
@@ -21,6 +22,7 @@ function App() {
     }
   };
 
+  // Increase / Decrease
   const updateQuantity = (id, change) => {
     setCart(cart.map(item =>
       item.id === id
@@ -29,10 +31,12 @@ function App() {
     ).filter(item => item.quantity > 0));
   };
 
+  // Remove item
   const removeItem = (id) => {
     setCart(cart.filter(item => item.id !== id));
   };
 
+  // Total items
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (

@@ -7,24 +7,14 @@ function CartSidebar({ cart, isOpen, onClose, onUpdateQuantity, onRemove }) {
   );
 
   return (
-    <div style={{
-      position: "fixed",
-      right: 0,
-      top: 0,
-      width: "300px",
-      height: "100%",
-      background: "white",
-      color: "black",
-      padding: "20px",
-      overflowY: "auto"
-    }}>
+    <div className="cart">
       <button onClick={onClose}>Close</button>
 
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
         cart.map(item => (
-          <div key={item.id} style={{ marginBottom: "15px" }}>
+          <div key={item.id}>
             <h4>{item.name}</h4>
             <p>₹{item.price}</p>
 
