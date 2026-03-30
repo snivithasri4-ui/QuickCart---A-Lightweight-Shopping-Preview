@@ -1,11 +1,21 @@
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "../styles/Header.css";
-function Header({ count, onCartClick }) {
+function Header() {
+  const { cart } = useCart();
+
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
-    <header style={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
-      <h1>🛒 QuickCart</h1>
-      <button onClick={onCartClick}>
-        Cart ({count})
-      </button>
+    <header>
+      <h1>QuickCart</h1>
+
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/category/Electronics">Electronics</Link>
+        <Link to="/category/Fashion">Fashion</Link>
+        <Link to="/cart">Cart ({count})</Link>
+      </nav>
     </header>
   );
 }
